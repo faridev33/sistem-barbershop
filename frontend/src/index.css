@@ -1,25 +1,25 @@
 /* ==========================================
-   1. COLOR PALETTE & GLOBAL RESET
+   1. CLASSIC BARBER POLE COLOR PALETTE
    ========================================== */
 :root {
-  /* Warna Pilihan Anda */
-  --color-dark: #09637E;
-  --color-main: #088395;
-  --color-accent: #7AB2B2;
-  --color-bg: #EBF4F6;
-  
-  /* Tambahan Warna Pendukung Profesional */
+  /* Warna Utama: Hitam & Putih (Kesan Profesional & Bersih) */
+  --color-dark: #1a1a1a;
+  --color-main: #0047AB;   /* Biru senada dengan kumis di gambar */
+  --color-accent: #ce1212; /* Merah senada dengan kumis di gambar */
+  --color-bg: #f8f9fa;
   --color-white: #ffffff;
-  --color-text: #2c3e50; /* Abu-abu kebiruan gelap untuk teks */
-  --color-success: #27ae60; /* Hijau untuk Selesai */
-  --color-warning: #f39c12; /* Kuning/Oranye untuk Diproses */
-  --color-danger: #e74c3c; /* Merah untuk Logout/Batal */
+  --color-text: #222222;      /* Abu-abu Sangat Muda (Background agar mata tidak lelah) */
+  
+  /* Warna Pendukung */
+  --color-white: #ffffff;     /* Putih Bersih */
+  --color-text: #222222;      /* Hitam untuk teks agar tajam */
+  --color-success: #16a34a;   /* Hijau untuk status 'Selesai' */
+  --color-warning: #facc15;   /* Kuning untuk status 'Diproses' */
+  --color-danger: #dc2626;    /* Merah Terang untuk Hapus */
 }
 
 /* 
-  RESET GLOBAL: 
-  Ini adalah baris paling penting untuk memperbaiki error di screenshot Anda!
-  Memaksa website memenuhi seluruh layar tanpa dibatasi oleh Vite.
+  RESET GLOBAL 
 */
 * {
   margin: 0;
@@ -31,6 +31,19 @@ html, body, #root {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-bg);
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Scrollbar agar senada dengan tema Hitam */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark);
+  border-radius: 10px;
 }

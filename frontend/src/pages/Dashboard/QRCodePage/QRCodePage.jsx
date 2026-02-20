@@ -1,8 +1,9 @@
 import React from 'react';
-import { QRCodeSVG } from 'qrcode.react';
+import QRCard from '../../../components/dashboard/QRCode/QRCard';
 import '../../../styles/dashboard/dashboard.css';
 
 const QRCodePage = () => {
+    // URL ini yang akan di-scan oleh pelanggan
     const linkReservasi = "http://localhost:5173/booking"; 
 
     return (
@@ -11,22 +12,18 @@ const QRCodePage = () => {
             flexDirection: 'column', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            height: '80vh' // Mengambil 80% tinggi layar agar ke tengah
+            height: '80vh' 
         }}>
-            <h2 style={{marginBottom: '20px'}}>QR Code Reservasi</h2>
+            <h2 style={{ marginBottom: '20px', color: '#09637E' }}>
+                QR Code Reservasi
+            </h2>
             
-            <div className="qr-box" style={{
-                padding: '40px', 
-                boxShadow: '0 4px 15px rgba(0,0,0,0.2)', 
-                borderRadius: '15px',
-                backgroundColor: 'white'
-            }}>
-                <QRCodeSVG value={linkReservasi} size={250} level={"H"} />
-                <p style={{marginTop: '20px', fontWeight: 'bold', color: '#555'}}>{linkReservasi}</p>
-                <button className="btn-aksi" onClick={() => window.print()} style={{marginTop: '15px', width: '100%'}}>
-                    Cetak QR Code
-                </button>
-            </div>
+            {/* Memanggil Komponen Kartu QR */}
+            <QRCard value={linkReservasi} size={250} />
+            
+            <p style={{ marginTop: '20px', color: '#777', fontSize: '14px', maxWidth: '300px', textAlign: 'center' }}>
+                Customer bisa scan kode ini untuk melakukan reservasi antrian secara mandiri.
+            </p>
         </div>
     );
 };

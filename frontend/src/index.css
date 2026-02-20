@@ -1,0 +1,36 @@
+/* ==========================================
+   1. COLOR PALETTE & GLOBAL RESET
+   ========================================== */
+:root {
+  /* Warna Pilihan Anda */
+  --color-dark: #09637E;
+  --color-main: #088395;
+  --color-accent: #7AB2B2;
+  --color-bg: #EBF4F6;
+  
+  /* Tambahan Warna Pendukung Profesional */
+  --color-white: #ffffff;
+  --color-text: #2c3e50; /* Abu-abu kebiruan gelap untuk teks */
+  --color-success: #27ae60; /* Hijau untuk Selesai */
+  --color-warning: #f39c12; /* Kuning/Oranye untuk Diproses */
+  --color-danger: #e74c3c; /* Merah untuk Logout/Batal */
+}
+
+/* 
+  RESET GLOBAL: 
+  Ini adalah baris paling penting untuk memperbaiki error di screenshot Anda!
+  Memaksa website memenuhi seluruh layar tanpa dibatasi oleh Vite.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+}

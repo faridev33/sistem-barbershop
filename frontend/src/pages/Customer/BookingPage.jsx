@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../styles/dashboard/dashboard.css';
-import { FaCut, FaQrcode, FaUsers, FaClock } from 'react-icons/fa';
+import { FaCut, FaQrcode, FaUsers, FaClock, FaArrowLeft } from 'react-icons/fa';
 
 const BookingPage = () => {
     const navigate = useNavigate();
@@ -70,6 +70,30 @@ const BookingPage = () => {
 
     return (
         <div className="login-container" style={{ backgroundColor: '#EBF4F6', flexDirection: 'column', padding: '20px' }}>
+            
+            {/* TOMBOL KEMBALI KE MENU ROLE */}
+            <div style={{ width: '100%', maxWidth: '450px', marginBottom: '14px' }}>
+                <button 
+                    type="button"
+                    onClick={() => navigate('/')} 
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        padding: '8px 16px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #cce0eb',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        color: '#09637E',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.06)'
+                    }}
+                >
+                    <FaArrowLeft /> Ganti Role / Menu Utama
+                </button>
+            </div>
             
             {/* INFO ANTRIAN LIVE (Sinkron dengan Admin) */}
             <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', width: '100%', maxWidth: '450px' }}>

@@ -4,8 +4,7 @@
   align-items: center;
   min-height: 100vh;
   width: 100vw;
-  /* Menggunakan gambar background dengan overlay gelap agar form terlihat menonjol */
-  background: linear-gradient(rgba(9, 99, 126, 0.7), rgba(9, 99, 126, 0.8)), 
+  background: linear-gradient(rgba(10, 30, 60, 0.75), rgba(10, 30, 60, 0.85)), 
               url('../../assets/scissors-combs-copy-space.jpg');
   background-size: cover;
   background-position: center;
@@ -14,35 +13,188 @@
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.95); /* Putih sedikit transparan */
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 36px 32px;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
   width: 100%;
-  max-width: 420px;
-  backdrop-filter: blur(5px); /* Efek kaca (Glassmorphism) */
-  border-top: 8px solid var(--color-main); /* Garis tebal di atas sesuai tema */
+  max-width: 460px;
+  backdrop-filter: blur(8px);
+  border-top: 8px solid var(--color-main);
   text-align: center;
 }
 
 .login-box h2 {
   color: var(--color-dark);
-  font-size: 28px;
-  margin-bottom: 5px;
+  font-size: 26px;
+  margin-bottom: 6px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.login-box p {
+.login-box p.subtitle {
   color: #666;
-  font-size: 14px;
-  margin-bottom: 30px;
+  font-size: 13.5px;
+  margin-bottom: 24px;
 }
 
+/* ==========================================
+   AKSES CEPAT (2 ROLE BUTTONS)
+   ========================================== */
+.quick-access-wrapper {
+  background: #f8fbff;
+  border: 1.5px solid #d4e5f9;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.quick-access-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0047ab;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.role-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-role-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+}
+
+.quick-role-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.quick-role-btn.admin {
+  border-color: #bcd7ff;
+}
+.quick-role-btn.admin:hover {
+  border-color: #0047ab;
+  background: #f4f8ff;
+}
+
+.quick-role-btn.customer {
+  border-color: #bbf7d0;
+}
+.quick-role-btn.customer:hover {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.quick-role-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.quick-role-icon.admin-icon {
+  background: #e8f1ff;
+  color: #0047ab;
+}
+
+.quick-role-icon.customer-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.quick-role-info {
+  flex: 1;
+}
+
+.quick-role-title {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.quick-role-desc {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.quick-role-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.quick-role-badge.admin-badge {
+  background: #e8f1ff;
+  color: #0047ab;
+}
+
+.quick-role-badge.customer-badge {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ==========================================
+   DIVIDER
+   ========================================== */
+.login-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.login-divider span {
+  padding: 0 12px;
+}
+
+/* ==========================================
+   LOGIN FORM MANUAL
+   ========================================== */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .input-group {
@@ -54,50 +206,73 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--color-dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .login-input {
-  padding: 14px 16px;
-  border: 2px solid #e1e1e1;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
   width: 100%;
+  box-sizing: border-box;
   transition: 0.3s;
-  background-color: #f9f9f9;
+  background-color: #f8fafc;
 }
 
 .login-input:focus {
   border-color: var(--color-main);
   background-color: #fff;
   outline: none;
-  box-shadow: 0 0 10px rgba(8, 131, 149, 0.2);
+  box-shadow: 0 0 8px rgba(0, 71, 171, 0.2);
 }
 
 .login-btn {
-  padding: 16px;
+  padding: 14px;
   background: linear-gradient(45deg, var(--color-main), var(--color-dark));
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.4s;
-  margin-top: 10px;
+  transition: 0.3s;
+  margin-top: 6px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .login-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(8, 131, 149, 0.4);
-  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 71, 171, 0.35);
+  filter: brightness(1.08);
 }
 
-/* Tampilan HP */
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-error-alert {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Responsive */
 @media screen and (max-width: 480px) {
   .login-box {
-    padding: 30px 20px;
+    padding: 24px 18px;
   }
 }

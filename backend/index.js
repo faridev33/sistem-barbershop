@@ -14,7 +14,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/booking', bookingRoutes); // <--- TAMBAH INI
 app.use('/api/queues', queueRoutes); // <--- TAMBAH INI
 
-const PORT = 5000;
+const PORT = Number(process.env.PORT) || 5000;
 app.listen(PORT, () => {
     console.log(`✅ Server berjalan di http://localhost:${PORT}`);
 });
